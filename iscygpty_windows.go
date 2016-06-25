@@ -16,7 +16,7 @@ var procGetFileType = kernel32.NewProc("GetFileType")
 const fileNameInfo uintptr = 2
 const fileTypePipe = 3
 
-// Return true if the file descriptor is Cygwin/MSYS pty.
+// IsCygwinPty returns true if the file descriptor is Cygwin/MSYS pty.
 // Only works on Vista or later. (Always returns false on XP or earlier.)
 func IsCygwinPty(fd uintptr) bool {
 	// Check if GetFileInformationByHandleEx is available.
