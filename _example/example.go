@@ -18,7 +18,8 @@ func main() {
 	}
 	for _, v := range a {
 		if iscygpty.IsCygwinPty(v.f.Fd()) {
-			fmt.Println(v.name, "is Cygwin/MSYS pty.")
+			fmt.Println(v.name, "is Cygwin/MSYS pty.",
+				"(" + iscygpty.GetPipeName(v.f.Fd()) + ")")
 		} else {
 			fmt.Println(v.name, "is Not Cygwin/MSYS pty.")
 		}
