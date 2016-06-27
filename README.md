@@ -6,12 +6,13 @@ Check if a program running on mintty (or some other terminal) on Cygwin/MSYS.
 
 ## API
 
-Only two functions are provided.
+Only three functions are provided.
 
+* `GetPipeName()`
 * `IsCygwinPty()`
 * `IsCygwinPtyUsed()`
 
-See `exapmle/example.go` for usage.
+See `_exapmle/example.go` for usage.
 
 
 ## License
