@@ -54,9 +54,6 @@ func GetPipeName(fd uintptr) string {
 func IsCygwinPty(fd uintptr) bool {
 	s := GetPipeName(fd)
 	// Check the name of the pipe.
-	matched, _ := regexp.MatchString(`\\(?:cygwin|msys)-[0-9a-f]{16}-pty[0-9]+-(?:from|to)-master`, s)
-	if matched {
-		return true
-	}
-	return false
+	matched, _ := regexp.MatchString(`^\\(?:cygwin|msys)-[0-9a-f]{16}-pty[0-9]+-(?:from|to)-master$`, s)
+	return matched
 }
